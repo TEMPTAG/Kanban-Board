@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  font-family: "Inter Tight", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: #000000;
+  color: #000b26;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +32,7 @@ a:hover {
 }
 
 body {
-  background: #473d3f;
+  background: #ffffff;
   background-size: cover;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
@@ -45,6 +45,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #000b26;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.1;
+  color: #ffffff;
 }
 
 button {
@@ -68,7 +75,7 @@ button:focus-visible {
 }
 
 main {
-  color: black;
+  /* color: black; */
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -90,6 +97,7 @@ tbody tr:nth-child(odd) {
   display: flex;
   padding: 1em 2em;
   width: 100vw;
+  background-color: #000b26;
 }
 
 .nav ul {
@@ -102,13 +110,13 @@ tbody tr:nth-child(odd) {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: larger;
+  font-size: 2em;
   font-weight: 900;
   margin-left: 1em;
 }
 
 .nav-title a {
-  color: #058ed9;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -153,16 +161,16 @@ tbody tr:nth-child(odd) {
 }
 
 .todo {
-  background-color: #f4ebd9;
+  background-color: #739772;
   margin-left: 2rem;
 }
 
 .inprogress {
-  background-color: #a39a92;
+  background-color: #60815f;
 }
 
 .done {
-  background-color: #77685d;
+  background-color: #4b644a;
   margin-right: 2rem;
 }
 
@@ -191,7 +199,7 @@ tbody tr:nth-child(odd) {
   width: fit-content;
   min-width: 600px;
   height: fit-content;
-  background-color: #f4ebd9;
+  background-color: #000b26;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -202,7 +210,7 @@ tbody tr:nth-child(odd) {
 
 .form > h1,
 .form > label {
-  color: #000000;
+  color: #ffffff;
 }
 
 .form > input {
@@ -227,12 +235,10 @@ tbody tr:nth-child(odd) {
 }
 
 .editBtn {
-  background-color: #f9f9f9;
   margin: 5px;
 }
 
 .deleteBtn {
-  background-color: #f9f9f9;
   margin: 5px;
 }
 
@@ -241,15 +247,16 @@ tbody tr:nth-child(odd) {
   width: 100%;
   align-items: center;
   justify-content: center;
+  color: #000b26;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #000000;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #000000;
   }
   button {
     background-color: #f9f9f9;
