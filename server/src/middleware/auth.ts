@@ -12,34 +12,22 @@ export const authenticateToken = (
   res: Response,
   next: NextFunction
 ) => {
-  // Extract the token from the Authorization header
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1]; // Expecting 'Bearer <token>' format
+  const authHeader = req.headers.authorization;
 
-  // If there's no token in the header, respond with a 401 Unauthorized status
-  if (!token) {
-    return res.status(401).send("Unauthorized");
+  if (authHeader) {
+    const token = authHeader.split(" ")[1];
+
+    const secretKey = process.env.JWT_SECRET_KEY || "";
+
+    jwt.verify(token, secretKey, (err, user) => {
+      if (err) {
+        return res.sendStatus(403); // Forbidden
+      }
+
+      req.user = user as JwtPayload;
+      return next();
+    });
+  } else {
+    res.sendStatus(401); // Unauthorized
   }
-
-  // Verify the token using the JWT secret
-  jwt.verify(token, process.env.JWT_SECRET as string, (err, user) => {
-    // If verification fails, respond with a 403 Forbidden status
-    if (err) {
-      return res.status(403).send("Forbidden");
-    }
-
-    // Check that user information is present after verification
-    if (!user) {
-      return res.status(401).send("Unauthorized");
-    }
-
-    // Attach the decoded user data to the request object
-    req.user = user as JwtPayload;
-
-    // Proceed to the next middleware or route handler
-    next();
-    return;
-  });
-
-  return;
 };
