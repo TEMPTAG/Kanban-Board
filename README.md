@@ -12,7 +12,11 @@
 
 Krazy Kanban Board is a full-stack Kanban board application built with React, TypeScript, Express, and PostgreSQL. It allows users to securely log in, manage tasks, and organize them across different stages in a Kanban-style layout.
 
-![Screenshot of Application]()
+![Screenshot of Home Page](/assets/readmeScreenshots/homeScreenshot.jpg)
+
+![Screenshot of Login Page](/assets/readmeScreenshots/loginScreenshot.jpg)
+
+![Screenshot of Kanban Board Page](/assets/readmeScreenshots/boardScreenshot.jpg)
 
 ---
 
